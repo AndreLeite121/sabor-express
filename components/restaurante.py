@@ -57,17 +57,21 @@ class Restaurante:
         for item in cardapio_data:
             if "tipo" in item:
                 if item["tipo"] == "Bebida":
-                    Bebida(
-                        nome=item["Item"],
-                        preco=item["Price"],
-                        tamanho=item["Size"]
+                    cardapio.append(
+                        Bebida(
+                            nome=item["Item"],
+                            preco=item["Price"],
+                            tamanho=item["Size"]
+                        )
                     )
                 elif item["tipo"] == "Sobremesa":
-                    Sobremesa(
-                        nome=item["Item"],
-                        preco=item["Price"],
-                        tipo=item["Type"],
-                        tamanho=item["Size"]
+                    cardapio.append(
+                        Sobremesa(
+                            nome=item["Item"],
+                            preco=item["Price"],
+                            tipo=item["Type"],
+                            tamanho=item["Size"]
+                        )
                     )
             else:
                 cardapio.append(

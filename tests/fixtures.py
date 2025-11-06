@@ -81,3 +81,14 @@ def sobremesa_fixture():
         tipo="Gelados",
         tamanho="500ml"
     )
+
+@pytest.fixture
+def mock_menu_completo():
+    return [
+        # Um Prato (não tem 'tipo')
+        {"Item": "Prato Teste", "Price": 10.0, "Description": "Desc Prato"},
+        # Uma Bebida (tem 'tipo')
+        {"Item": "Bebida Teste", "Price": 5.0, "tipo": "Bebida", "Size": "300ml"},
+        # Uma Sobremesa (tem 'tipo')
+        {"Item": "Sobremesa Teste", "Price": 8.0, "tipo": "Sobremesa", "Type": "Doce", "Size": "P"}
+    ]
